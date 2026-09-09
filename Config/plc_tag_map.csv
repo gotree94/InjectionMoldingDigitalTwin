@@ -1,0 +1,61 @@
+Device,Address,Group,TagName,Direction,DataType,Description
+X,0,input,INJ_COMPLETE,IN,bool,사출 완료 신호
+X,1,input,EJECT_HOME,IN,bool,이젝션 완료
+X,2,input,COUNT_SENSOR,IN,bool,카운팅 센서
+X,3,input,VISION_OK,IN,bool,비전 OK
+X,4,input,VISION_NG,IN,bool,비전 NG
+X,5,input,VISION_DONE,IN,bool,비전 검사 완료
+X,6,input,BIN_FULL,IN,bool,불량 박스 풀
+X,7,input,E_STOP,IN,bool,비상정지(NC)
+X,8,input,GUARD_DOOR,IN,bool,가드 도어(NC)
+X,9,input,CONV_OCR,IN,bool,컨베이어 과부하(NC)
+X,10,input,MODE_SEL,IN,bool,운전 절환(ON=수동)
+X,11,input,START_BTN,IN,bool,스타트 버튼
+X,12,input,STOP_BTN,IN,bool,스톱 버튼
+X,13,input,RESET_BTN,IN,bool,리셋 버튼
+Y,0,output,CONV_MOTOR,OUT,bool,컨베이어 모터
+Y,1,output,REJECT_BLOW,OUT,bool,리젝트 에어 블로우
+Y,2,output,INJ_START,OUT,bool,사출기 기동 지령
+Y,3,output,LAMP_RUN,OUT,bool,운전 램프
+Y,4,output,LAMP_ALM,OUT,bool,알람 램프
+Y,5,output,BUZZER,OUT,bool,부저
+Y,6,output,EJECT_REQ,OUT,bool,이젝션 개시 지령
+M,0,relay,RUN_FLAG,STATE,bool,운전 중
+M,1,relay,AUTO_MODE,STATE,bool,자동 모드 허가
+M,2,relay,ALARM_FLAG,STATE,bool,알람 플래그
+M,3,relay,SEQ_HOLD,STATE,bool,시퀀스 홀드
+M,10,step,STEP_IDLE,STATE,bool,대기 스텝
+M,11,step,STEP_EJECT,STATE,bool,이젝션 스텝
+M,12,step,STEP_COUNT_WAIT,STATE,bool,카운팅 대기 스텝
+M,13,step,STEP_VISION,STATE,bool,비전 검사 스텝
+M,14,step,STEP_SORT_OK,STATE,bool,양품 분류 스텝
+M,15,step,STEP_SORT_NG,STATE,bool,불량 분류 스텝
+M,20,vison,VISION_RESULT_LATCH,STATE,bool,비전 판정 래치
+M,22,vison,REJECT_FIRE,STATE,bool,리젝트 발사
+M,40,alarm,ALM_ESTOP,STATE,bool,비상정지 알람
+M,41,alarm,ALM_GUARD,STATE,bool,가드 도어 알람
+M,42,alarm,ALM_OCR,STATE,bool,과부하 알람
+M,43,alarm,ALM_BINFULL,STATE,bool,불량박스 풀 알람
+M,44,alarm,ALM_SENSOR,STATE,bool,센서 이상 알람
+M,45,alarm,ALM_TIMEOUT,STATE,bool,타임아웃 알람
+D,0,kpi,TOTAL_COUNT,STATE,uint16,총 생산 카운트
+D,1,kpi,OK_COUNT,STATE,uint16,양품 카운트
+D,2,kpi,NG_COUNT,STATE,uint16,불량 카운트
+D,10,kpi,CYCLE_TIME,STATE,uint16,사이클 타임[0.1초]
+D,11,param,TARGET_QTY,STATE,uint16,목표 생산량
+D,12,param,CONV_SPEED,STATE,uint16,컨베이어 속도[%]
+D,13,param,PITCH_MM,STATE,uint16,제품 피치[mm]
+D,14,param,REJECT_DELAY,STATE,uint16,리젝트 지연[10ms]
+D,15,param,REJECT_ON_MS,STATE,uint16,리젝트 작동 시간[ms]
+D,20,process,MOLD_TEMP,STATE,uint16,금형 온도[x0.1℃]
+D,21,process,INJ_PRESSURE,STATE,uint16,사출 압력[x0.1MPa]
+D,22,process,INJ_SPEED,STATE,uint16,사출 속도[x0.1mm/s]
+D,23,process,SHOT_COUNT,STATE,uint16,샷 카운터
+D,100,vison,VISION_CODE,STATE,uint16,비전 판정 코드(0=OK)
+D,101,kpi,NG_TYPE1_COUNT,STATE,uint16,결함유형1(상처)
+D,102,kpi,NG_TYPE2_COUNT,STATE,uint16,결함유형2(이물)
+D,103,kpi,NG_TYPE3_COUNT,STATE,uint16,결함유형3(버어)
+D,104,kpi,NG_TYPE4_COUNT,STATE,uint16,결함유형4(변형)
+D,105,kpi,NG_OTHER_COUNT,STATE,uint16,기타 결함
+D,110,diag,SENSOR_STUCK_CNT,STATE,uint16,센서 스틱온 횟수
+D,900,alarm,ALARM_CODE,STATE,uint16,알람 코드
